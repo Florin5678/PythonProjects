@@ -8,12 +8,13 @@ def main():
         if x.isnumeric():
             if unitofmeasurement!="": okinput=False
             else: r2+=x
-        elif x.isalpha():
+        elif x.isalpha() or x==" ":
             unitofmeasurement+=x
         else: okinput=False
     if okinput:
         V = 4.0/3.0 * pi * float(r2)**3
         print('The volume of the sphere is: ', V,end="")
+        unitofmeasurement = unitofmeasurement.strip(" ")
         if unitofmeasurement!="": print(f" {unitofmeasurement}^3")
     else: print("Invalid input.")
 

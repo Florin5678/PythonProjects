@@ -28,7 +28,7 @@ def main():
         response = chatbot(user_input)
         print(f"Bot: {response}\n")
 
-mif __name__ == "__main__":
+if __name__ == "__main__":
     main()
 
 # Does not work. Keeps returning Rate Limit Error.

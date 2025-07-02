@@ -1,8 +1,8 @@
-import math
+# import math
 import random
 import csv
 import linecache
-from tkinter.messagebox import showerror
+# from tkinter.messagebox import showerror
 
 filename = "savedata.csv"
 

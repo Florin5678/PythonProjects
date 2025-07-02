@@ -53,7 +53,7 @@ def compmove():
     defensemode=min(defensemode,int(difficulty))
 
     if defensemode>0:
-        print(f"{Colors.RED}DEFENSE MODE: {defensemode}{Colors.ENDC}")
+        # print(f"{Colors.RED}DEFENSE MODE: {defensemode}{Colors.ENDC}")
         match defensemode:
             case 1:
                 for x in range(0,8):
@@ -200,12 +200,13 @@ def format(x):
 def settings():
     global playercolor, compcolor, difficulty, keepscore, score
     select=""
-    match input(f"{playercolor}1. Player color{Colors.ENDC} \n{compcolor}2. Computer color{Colors.ENDC}\n3. Difficulty: {difficulty}\n4. Keep score: {keepscore}\n5. Back\n"):
+    match input(f"{playercolor}1. Player color{Colors.ENDC} \n{compcolor}2. Computer color{Colors.ENDC}\n3. Difficulty: {difficulty_qualifier(difficulty)}\n4. Keep score: {keepscore}\n5. Back\n"):
         case "1": select="Player"
         case "2": select="Computer"
         case "3":
-            difficulty= input("Choose Difficulty (1-5): ")
-            if not difficulty in ["1","2","3","4","5"]: "Invalid input."
+            new_difficulty = input("Choose Difficulty (1-5): ")
+            if not new_difficulty in ["1","2","3","4","5"]: print("Invalid input.")
+            else: difficulty = new_difficulty
         case "4":
             keepscore=not keepscore
             score = [0, 0, 0]
@@ -229,6 +230,12 @@ def mainmenu():
         case "2": settings()
         case "3": exit()
         case _: mainmenu()
+def difficulty_qualifier(difficulty):
+    if difficulty=="1": return "1 (Easy)"
+    if difficulty=="2": return "2 (Medium)"
+    if difficulty=="3": return "3 (Hard)"
+    if difficulty=="4": return "4 (Challenging)"
+    else: return "5 (Impossible)"
 
 if __name__ == "__main__":
     mainmenu()
