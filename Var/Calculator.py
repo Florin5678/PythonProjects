@@ -133,8 +133,11 @@ def calc(n):
     n=para(n)
     if n*10%10==0: n=int(n)
     print(n)
+def main():
+    while True:
+        n=input("Submit calculation.\nAccepted operations: + - * / ^ % () [] {}\n")
+        if isvalidinput(n): calc(n)
+        else: input("Invalid input.")
 
-n=input("Submit calculation.\nAccepted operations: + - * / ^ % () [] {}\n")
-if isvalidinput(n):
-    calc(n)
-else: print("Invalid input.")
+if __name__ == "__main__":
+    main()

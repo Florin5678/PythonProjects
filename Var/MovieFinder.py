@@ -33,4 +33,5 @@ def main():
     movie_name = input("Enter a movie name: ")
     get_movie_info(movie_name)
 
-main()
+if __name__ == "__main__":
+    main()

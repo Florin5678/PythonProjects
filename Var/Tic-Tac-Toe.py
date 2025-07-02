@@ -230,4 +230,5 @@ def mainmenu():
         case "3": exit()
         case _: mainmenu()
 
-mainmenu()
+if __name__ == "__main__":
+    mainmenu()

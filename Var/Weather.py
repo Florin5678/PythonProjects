@@ -7,7 +7,7 @@ def get_weather(city_name):
 
     if response.status_code == 200:
         data = response.json()
-        
+
         city = data['location']['name']
         country = data['location']['country']
         temperature = data['current']['temp_c']
@@ -59,4 +59,5 @@ def main():
             break
         get_weather(city_name)
 
-main()
+if __name__ == "__main__":
+    main()
